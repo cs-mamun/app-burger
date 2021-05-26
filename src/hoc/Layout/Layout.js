@@ -1,20 +1,25 @@
 import React, { Component } from "react";
-import Auxi from "../../hoc/Auxi";
+import Auxi from "../Auxi/Auxi";
 import StyleClasses from "./Layout.module.css";
-import Toolbar from "../Navigation/Toolbar/Toolbar";
-import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
+import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
+import SideDrawer from "../../components/Navigation/SideDrawer/SideDrawer";
 
 class Layout extends Component {
   state = {
-    sideDrawer: true,
+    sideDrawer: false,
   };
   sideDrawerCloseHandler = () => {
     this.setState({ sideDrawer: false });
   };
+  sideDrawerToggleHandler = () => {
+    this.setState((prevState) => {
+      return { sideDrawer: !prevState.sideDrawer };
+    });
+  };
   render() {
     return (
       <Auxi>
-        <Toolbar />
+        <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler}/>
         <SideDrawer
           open={this.state.sideDrawer}
           closed={this.sideDrawerCloseHandler}

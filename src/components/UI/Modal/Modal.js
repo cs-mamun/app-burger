@@ -1,5 +1,5 @@
 import React from "react";
-import Auxi from "../../../hoc/Auxi";
+import Auxi from "../../../hoc/Auxi/Auxi";
 import Backdrop from "../Backdrop/Backdrop";
 import classes from "./Modal.module.css";
 

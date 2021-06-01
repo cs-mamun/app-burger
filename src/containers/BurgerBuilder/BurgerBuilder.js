@@ -5,6 +5,8 @@ import OrderSummery from "../../components/Burger/OrderSummery/OrderSumery";
 import Modal from "../../components/UI/Modal/Modal";
 import Auxi from "../../hoc/Auxi/Auxi";
 
+import axios from '../../axios-orders'
+
 const INGREDIENT_PRICES = {
   salad: 0.5,
   cheese: 0.4,
@@ -86,7 +88,8 @@ class BurgerBuilder extends Component {
   };
 
   purchaseContinueHandler = () => {
-    alert("You continue!");
+    // alert("You continue!");
+    axios.get('/orders.json')
   };
 
   render() {
